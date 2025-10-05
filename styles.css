@@ -514,9 +514,9 @@ section {
 }
 
 .member-image {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 25px;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
@@ -533,7 +533,7 @@ section {
 }
 
 .member-placeholder i {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .member-name {
