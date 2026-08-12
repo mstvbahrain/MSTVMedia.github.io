@@ -19,6 +19,19 @@ nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
 
 window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>80),{passive:true});
 
+const sections=[...document.querySelectorAll('main section[id]')];
+const navLinks=[...nav.querySelectorAll('a[href^="#"]')];
+const updateActiveNav=()=>{
+  const current=sections.reduce((active,section)=>window.scrollY>=section.offsetTop-180?section.id:active,'home');
+  navLinks.forEach(link=>{
+    const active=link.getAttribute('href')===`#${current}`;
+    link.classList.toggle('active',active);
+    if(active) link.setAttribute('aria-current','true'); else link.removeAttribute('aria-current');
+  });
+};
+window.addEventListener('scroll',updateActiveNav,{passive:true});
+updateActiveNav();
+
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}
