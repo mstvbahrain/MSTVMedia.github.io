@@ -1,21 +1,29 @@
-# MSTV Media Website
+# MSTV Media — Next.js Website
 
-Official website for **MSTV Media**, a Bahrain-based podcast and creative production company.
+An editorial Next.js website for MSTV Media, an independent media and marketing agency in Bahrain.
 
-## Publishing on GitHub Pages
+## Included
 
-1. Upload the contents of this folder to the `MSTVMedia.github.io` repository.
-2. Keep `CNAME` in the root folder so `mstvmedia.com` remains connected.
-3. Open the repository's **Settings → Pages** and publish from the `main` branch and `/ (root)` folder.
+- Responsive agency homepage
+- MSTV services, original shows and full team
+- Interactive client portfolio including Moore Bahrain
+- WhatsApp, email, phone and YouTube links
+- Static export support for GitHub Pages
+- `CNAME` for `mstvmedia.com`
 
-## Main files
+## Local development
 
-- `index.html` — website content
-- `styles.css` — layout and navy visual identity
-- `script.js` — mobile navigation, header and reveal animations
-- `images/` — MSTV logo, hero visual and team photography
+```bash
+pnpm install
+pnpm dev
+```
 
-## Contact details
+Open [http://localhost:3000](http://localhost:3000).
 
-- Email: info@mstvmedia.com
-- Phone and WhatsApp: +973 3387 1009
+## Build
+
+```bash
+pnpm build
+```
+
+The static website is generated in `out/`. Deploy that folder to static hosting, or configure a GitHub Actions workflow to publish it to GitHub Pages.
